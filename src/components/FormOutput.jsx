@@ -155,12 +155,12 @@ function FormOutput({ formData, onBackToForm }) {
       printWindow.close();
     });
     
-    // Removed window.print() here to prevent triggering the print dialog
-    // setTimeout(function() {
-    //   if (!printWindow.closed) {
-    //     printWindow.close();
-    //   }
-    // }, 500);
+    
+    setTimeout(function() {
+       if (!printWindow.closed) {
+         printWindow.close();
+       }
+     }, 500);
   }
    
       
