@@ -88,12 +88,15 @@ function FormOutput({ formData, onBackToForm }) {
             }
             .sp-article {
               font-weight: bold;
+              position: relative;
+              top: 0;
               font-size: 16px;
               display: block;
               max-width: 290px !important;
               word-wrap: break-word; 
               overflow-wrap: break-word; 
               white-space: normal;
+              margin: 0;
             }
           </style>
         </head>
@@ -104,14 +107,14 @@ function FormOutput({ formData, onBackToForm }) {
                 <div class="barcode-panel" style="background-color: rgb(255, 255, 255); padding: 5px; transform: scale(3.2)">
                   <div class="barcode-row" style="width: 100%; display: flex;">
                     <div class="qrcode-image" style="height: 120px; margin: auto 0px;">
-                      <img height="100%" alt="qr-code" src="src/assets/media/470054098_2657370687791277_4904186533986617337_n.jpg" style="margin: auto 0px;">
+                      <img height="100%" alt="qr-code" src="public/assets/media/470054098_2657370687791277_4904186533986617337_n.jpg" style="margin: auto 0px;">
                     </div>
                     <div class="second-row" style="display: flex; flex-direction: column; width: 100%;">
                       <svg id="barcode-${index}" style="max-width: 100%;"></svg>
-                      <div class="barcode-bottom-text" style="display: flex; justify-content: space-between; padding: 0px 10px;">
+                      <div class="barcode-bottom-text" style="display: flex; justify-content: space-between; align-items: start; padding: 0px 10px;">
                         <p class="sp-article" id="sp-Article">${produktName || "Produktname"}</p>
                         <div>
-                          <img loading="eager" alt="Brand" src="src/assets/media/logo_300x42 - label.webp" style="width: 120px;">
+                          <img loading="eager" alt="Brand" src="public/assets/media/logo_300x42 - label.webp" style="width: 120px;">
                         </div>
                       </div>
                     </div>
@@ -141,34 +144,25 @@ function FormOutput({ formData, onBackToForm }) {
                 });
               `).join('')}
             });
-            
-            // Wait for images and barcode generation to complete
-            window.onload = function() {
-              // Short delay to ensure barcodes are rendered
-              setTimeout(function() {
-                window.print();
-              }, 500);
-            };
           </script>
         </body>
       </html>
     `);
     
-    
     printWindow.document.close();
     
-   
     printWindow.addEventListener('afterprint', function() {
       printWindow.close();
     });
     
-    
-    setTimeout(function() {
-      if (!printWindow.closed) {
-        printWindow.close();
-      }
-    }, 500);
-}  
+    // Removed window.print() here to prevent triggering the print dialog
+    // setTimeout(function() {
+    //   if (!printWindow.closed) {
+    //     printWindow.close();
+    //   }
+    // }, 500);
+  }
+   
       
   
   
