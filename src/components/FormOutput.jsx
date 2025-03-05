@@ -55,6 +55,9 @@ function FormOutput({ formData, onBackToForm }) {
   const handlePrint = () => {
     const printWindow = window.open('', '_blank');
     
+    // Get the base URL to make image paths absolute
+    const baseUrl = window.location.origin;
+    
     printWindow.document.write(`
       <!DOCTYPE html>
       <html>
@@ -62,6 +65,7 @@ function FormOutput({ formData, onBackToForm }) {
           <title>Drücken</title>
           <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
           <style>
+            /* Your styles remain the same */
             body {
               margin: 0;
               padding: 0;
@@ -81,7 +85,6 @@ function FormOutput({ formData, onBackToForm }) {
             }
             .main-print-section {
               width: 100%;
-              background-color: red;
             }
             .barcode-panel {
               margin: 0 auto;
@@ -143,26 +146,32 @@ function FormOutput({ formData, onBackToForm }) {
                   background: '#ffffff'
                 });
               `).join('')}
+              
+              // Add a slight delay to ensure barcodes are rendered
+              setTimeout(function() {
+                window.print();
+              }, 500);
             });
           </script>
         </body>
       </html>
     `);
     
+    
     printWindow.document.close();
-  
- 
-  printWindow.addEventListener('afterprint', function() {
-    printWindow.close();
-  });
-  
-  
-  setTimeout(function() {
-    if (!printWindow.closed) {
+    
+    
+    printWindow.addEventListener('afterprint', function() {
       printWindow.close();
-    }
-  }, 500);
-} 
+    });
+    
+    
+    setTimeout(function() {
+      if (!printWindow.closed) {
+        printWindow.close();
+      }
+    }, 5000); 
+}
    
       
   
