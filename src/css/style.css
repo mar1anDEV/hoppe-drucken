@@ -1,0 +1,297 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+html, body {
+    height: 100%;
+}
+
+
+.main-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.background-main-section, .image {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.nav-top-logo {
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: 3;
+   width: 100%;
+   background-color: rgba(255, 0, 0, 0.667);
+   padding: 30px;
+}
+
+.brand-logo {
+    width: 220px;
+    cursor: pointer;
+}
+
+.main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(3px);
+}
+
+.dark-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2; 
+}
+
+.panel {
+    background-color: #c9c4c4;
+    height: 600px;
+    width: 90%;
+    max-width: 900px;
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
+}
+.panel {
+    background-color: rgba(200, 200, 200, 0.9);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+}
+
+.panel-header {
+    padding: 10px;
+}
+
+.panel-title {
+    text-align: center;
+    padding: 10px;
+}
+
+.panel-title h3 {
+    width: auto;
+    padding: 5px;
+    font-size: 27px;
+    font-family: 'Rajdhani', sans-serif;
+    color: #333333;
+}
+
+.form-group-info {
+    padding: 0 50px;
+    text-align: center;
+}
+
+.form-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+}
+.form-group {
+    padding: 10px;
+}
+
+.text{
+    padding: 16px 5px 16px 5px !important;
+}
+
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+    opacity: 1 !important;
+}
+
+.first-category-of-inputs,
+.secondary-category-of-inputs{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+.inputText {
+    height: 50px;
+    display: block;
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    transition: box-shadow 0.3s ease;
+}
+.inputText:focus {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+.inputText::placeholder {
+    font-size: 20px;
+}
+
+.field-input {
+    display: flex;
+    flex-direction: column;
+}
+.form-container-inputs {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.namen-input{
+    flex-grow: 3;
+}
+
+.field-input{
+    width: 100%;
+}
+
+
+.btn-main {
+    width: 80%; 
+    display: flex;
+    justify-content: center;
+}
+
+.btn-suchen {
+    width: 80%; 
+    height: 50px;
+    text-align: center;
+}
+
+.button {
+    width: 100%;
+    height: 100%;
+    font-weight: bolder;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: black;
+    border: black;
+    color: aliceblue;
+    transition: 0.2s ease-in-out;
+    border-radius: 5px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.button:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+.brands{
+    display: flex;
+    justify-content: center;
+    padding: 20px 120px;
+    align-items: center;
+}
+.brand{
+    cursor: pointer;
+    padding: 10px 20px;
+}
+
+
+.buttons {
+    width: 100%;
+    height: auto;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+.btn{
+    height: 100%;
+    width: 100%;
+    padding: 10px 20px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.2s ease-in-out;
+}
+.btn-box{
+    width: 45% !important;
+    height: 100%;
+    padding: 40px 0px 20px 0px;
+}
+
+.danger{
+    background-color: white;
+    color: black;
+}
+
+
+
+@media (max-width: 999px) {
+    .wrapper-section {
+        display: none;
+    }
+}
+.exit{
+    position: absolute;
+    bottom: 93%;
+    left: 80%;
+    width: 150px;
+    display: inline-block;
+}
+.btn-close{
+    cursor: pointer;
+    width: 100%;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    display: flex;
+    gap: 4px;
+}
+
+.close-title{
+    margin-top: auto;
+    font-size: 15px;
+    font-family: sans-serif;
+}
+
+
+
+
+
+.icon-container {
+    position: absolute;
+    top: 12px;
+    left: 90%;
+    display: inline-block;
+}
+
+.icon-container::before {
+    content: var(--tooltip-text, "Kopieren"); 
+    position: absolute;
+    top: 30px; 
+    left: 90%;
+    transform: translateX(-20%);
+    background-color: #333;
+    color: white;
+    padding: 5px;
+    font-size: 12px;
+    border-radius: 3px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s;
+}
+
+.icon-container:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
