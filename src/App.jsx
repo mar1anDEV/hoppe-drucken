@@ -5,7 +5,7 @@ import './css/style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-const Section = React.lazy(() => import('./components/mainSection')); // Lazy load
+const Section = React.lazy(() => import('./components/mainSection')); 
 
 if (typeof window !== 'undefined') {
   import('react-scan')
