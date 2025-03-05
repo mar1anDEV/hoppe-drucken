@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Loading from './components/loading';
-import './css/loading.css';
-import './css/style.css';
+import '/css/loading.css';
+import '/css/style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-const Section = React.lazy(() => import('./components/mainSection')); // Lazy load
+const Section = React.lazy(() => import('/components/mainSection')); // Lazy load
 
 if (typeof window !== 'undefined') {
   import('react-scan')
