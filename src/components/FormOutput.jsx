@@ -150,18 +150,19 @@ function FormOutput({ formData, onBackToForm }) {
     `);
     
     printWindow.document.close();
-    
-    printWindow.addEventListener('afterprint', function() {
+  
+ 
+  printWindow.addEventListener('afterprint', function() {
+    printWindow.close();
+  });
+  
+  
+  setTimeout(function() {
+    if (!printWindow.closed) {
       printWindow.close();
-    });
-    
-    
-    setTimeout(function() {
-       if (!printWindow.closed) {
-         printWindow.close();
-       }
-     }, 500);
-  }
+    }
+  }, 500);
+} 
    
       
   
