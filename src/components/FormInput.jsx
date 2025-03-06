@@ -1,10 +1,10 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useRef, useState} from 'react';
 import '../css/style.css';
 import FormOutput from './FormOutput';
 import HoppeBrandLogo from '../assets/media/logo_300x42.webp';
 import HofmeisterLogo from '../assets/media/hofmei-large.svg';
 import FrickeLogo from '../assets/media/fricke_logo.BxfcmfTT.webp';
-function FormInput() {
+function FormInput({ onSetLoading}) {
     const inputSN = useRef(null);
     const inputProduktNamen = useRef(null);
     const inputMenge = useRef(null);
@@ -12,7 +12,7 @@ function FormInput() {
     const inputArticle = useRef(null);
     const selectValue = useRef(null)
     const toolTip = useRef(null)
-    
+
     
     const [showOutput, setShowOutput] = useState(false);
     const [formData, setFormData] = useState({
@@ -30,7 +30,8 @@ function FormInput() {
         
         let cleanArticleInput = inputArticle.current.value.replace(/\s+/g, '');
         
-        
+    
+
         setFormData({
             artikelNummer: cleanArticleInput,
             artikelFormat: inputArticle.current.value,
@@ -38,8 +39,13 @@ function FormInput() {
             produktName: inputProduktNamen.current.value,
             menge: parseInt(inputMenge.current.value, 10)
         });
+
+        onSetLoading(true)
         
-        setShowOutput(true)
+        setTimeout(() => {
+            onSetLoading(false);  
+            setShowOutput(true);     
+        }, 300);
 
         
        
@@ -127,7 +133,7 @@ function FormInput() {
                         </div>
                     </div>
                     <div className="form-group">
-                        <form id="submitForm" onSubmit={handleFormValues} ref={formRef}> {/* Added ref to form */}
+                        <form id="submitForm" onSubmit={handleFormValues} ref={formRef}> 
                             <div className="form-container">
                                 <div className="form-container-inputs">
                                     <div className="first-category-of-inputs">
